@@ -18,34 +18,38 @@ class Sqaure:
     def size(self):
         return self.__size
 
+    @size.setter
+    def size(self, size):
+        if type(size) != int:
+            raise TypeError('size must be an integer')
+        elif size < 0:
+            raise TypeError('size must be >= 0')
+        self.__size = size
+
+    def area(self):
+        return (self.size ** 2)
+
+    def my_print(self):
+        if (self.__size == 0):
+            print('')
+        else:
+            for i in range(self.position[1]):
+                print('')
+
+            for i in range(self.size):
+                print(' ' * self.position[0] + '#' * self.size)
+
     @property
     def position(self):
         return self.__position
 
-    @size.setter
-    def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError('size must be an integer')
-        if value < 0:
-            raise ValueError('size must be >= 0')
-        self.__size = value
-
     @position.setter
-    def position(self, value):
-        if not isinstance(value, tuple):
-            raise TypeError('position must be a tuple of 2 positive integers')
-        if len(value) != 2:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        if not isinstance(value[0], int) or not isinstance(value[1], int):
-            raise TypeError('position must be a tuple of 2 positive integers')
-        if value[0] < 0 or value[1] < 0:
-            raise TypeError('position must be a tuple of 2 postive integers')
-        self.__position = value
+    def position(self, position):
+        if type(position) != tuple or \
+            len(position) != 2 or \
+            not all(isinstance(el, int) for el in position) or \
+                not all(el >= 0 for el in position):
 
-    def area(self):
-        return self.__size * self.__size
+            raise TypeError('position must bea  tuple of 2 integers')
 
-    def my_print(self):
-        print('{}'.format('\n' * self.__position[1]), end='')
-        print('{}'.format('\n'.join([' ' * self.__position[0] +
-              '#' * self.__size for i in range(0, self.__size)])))
+        self.__position = position
