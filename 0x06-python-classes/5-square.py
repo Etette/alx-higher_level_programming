@@ -25,6 +25,8 @@ class Sqaure:
         self.__size = size
 
     def area(self):
+        """calculates the sqaure area
+        """
         return (self.__size ** 2)
 
     def my_print(self):
