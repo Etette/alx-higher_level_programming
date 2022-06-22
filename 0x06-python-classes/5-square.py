@@ -11,7 +11,7 @@ class Sqaure:
     """
     def __init__(self, size=0):
         """initialize a square"""
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
