@@ -41,23 +41,25 @@ class Rectangle:
 
     def area(self):
         """ method that calculates the Rectangle area"""
-        return self.width * self.height
+        return (self.width * self.height)
 
     def perimeter(self):
         """ method that calculates the Rectangle perimeter"""
         if self.width == 0 or self.height == 0:
             return 0
-        return (2 * self.width) + (2 * self.height)
+        return ((2 * self.width) + (2 * self.height))
 
     def __str__(self):
         """method that returns the Rectangle #"""
         rectangle = ""
-        if self.width == 0 or self.height == 0:
+        if self.width == 0 or self.__height == 0:
             return rectangle
-        for i in range(self.height):
-            rectangle += ("#" * self.width) + "\n"
-        return rectangle[:-1]
+        for i in range(self.__height):
+            rectangle += ("#" * self.width)
+            if i is not self.__height - 1:
+                rectangle += "\n"
+        return rectangle
 
     def __repr__(self):
         """ method that returns the string rep of the instance"""
-        return "Rectangle({:d}, {:d}".format(self.width, self.height)
+        return "Rectangle({:d}, {:d}".format(self.__width, self.__height)
