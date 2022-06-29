@@ -13,7 +13,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """ methid that returns the value of the width """
+        """ method that returns the value of the width """
         return self.__width
 
     @width.setter
@@ -36,7 +36,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError('height must be an integer')
         if value < 0:
-            raise ValueError('hieght must be >= 0')
+            raise ValueError('height must be >= 0')
         self.__height = value
 
     def area(self):
@@ -52,14 +52,14 @@ class Rectangle:
     def __str__(self):
         """method that returns the Rectangle #"""
         rectangle = ""
-        if self.width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return rectangle
-        for i in range(self.__height):
+        for i in range(self.height):
             rectangle += ("#" * self.width)
-            if i is not self.__height - 1:
+            if i is not (self.height - 1):
                 rectangle += "\n"
         return rectangle
 
     def __repr__(self):
         """ method that returns the string rep of the instance"""
-        return "Rectangle({:d}, {:d}".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d}".format(self.width, self.height)
