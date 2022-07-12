@@ -8,6 +8,11 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """
     Square Implementation
+    Public instance method:
+        - area()
+        - display()
+        - to_dictionary
+        - update()
     """
 
     def __init__(self, size: int, x=0, y=0, id=None):
