@@ -1,7 +1,6 @@
 -- Write a script that displays the top 3 of cities temperature in July and August
 -- Order temperature in descending order
-SELECT city, month, AVG(value) AS avg_temp FROM temperatures
+SELECT city, AVG(value) AS avg_temp FROM temperatures
 WHERE (month=7 OR month=8)
 GROUP BY city
-ORDER BY avg_temp DESC
-LIMIT 3;
+ORDER BY avg_temp DESC LIMIT 3;
