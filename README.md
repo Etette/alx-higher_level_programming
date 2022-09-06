@@ -1,1 +1,1 @@
-This a the repo for ALX higher level programming
+This is the repo for ALX higher level programming
