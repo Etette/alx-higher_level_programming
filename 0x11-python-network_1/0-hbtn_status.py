@@ -3,7 +3,7 @@
 This script fetches a URL
 """
 
-if__name__ == "__main__":
+if __name__ == "__main__":
     import urllib.request
     URL = 'https://intranet.hbtn.io/status'
     with urllib.request.orlopen(URL) as response:
